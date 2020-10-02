@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+{% block content%}
+    <form class="p-5" method='POST'>
+        {{ form.hidden_tag() }}
+
+                        <p class="h4 mb-4 text-center" style="font-family: Oswald; font-size: 22px; color: #0d47a1">
+                            JOIN OUR TEAM TODAY!</p>
+
+                        {{form.name.label(class='form-control')}}
+                        {% if form.name.errors %}
+                            {{ form.name(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                            {% for error in form.name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.name(class="form-control") }}
+                        {% endif %}
+
+                    
+                        {{form.email.label(class='form-control')}}
+                        {% if form.email.errors %}
+                            {{ form.email(class="form-control is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                            {{ form.email(class="form-control") }}
+                        {% endif %}
+
+                    
+                        
+
+                    
+                          <select class="browser-default custom-select mb-4" name="Role" id="select" style="margin-top: 20px;">
+                            <option value="" disabled="" selected="">Role</option>
+                            <option value="1">PR, Media Design</option>
+                            <option value="2">Awareness &amp; Education</option>
+                            <option value="3">Partnerships, Development, Stakeholders</option>
+                            <option value="4">Field Action</option>
+                            <option value="5">Events</option>
+                            <option value="6">Policy Advocacy</option>
+                            <option value="7">Technology Solutions</option>
+                          </select>
+
+                          <!-- Modal -->
+                          <!-- Button trigger modal -->
+                          <button type="button" class="btn btn-info my-4 btn-block light-blue darken-4 waves-effect waves-light" data-toggle="modal" data-target="#centralModalSm" style="border-radius: 10px;">
+                            Know More about Your Roles
+                          </button>
+                            {{ form.submit(class="btn btn-outline-info") }}
+                          <!-- Central Modal large -->
+                          <div class="modal fade" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+                            <!-- Change class .modal-sm to change the size of the modal -->
+                            <div class="modal-dialog modal-lg" role="document">
+                              <div class="modal-content" style="background-color: #001536">
+                                <div class="modal-header">
+                                  <h4 class="modal-title w-100" id="myModalLabel" style="text-transform: uppercase; font-size: 22.5px;font-weight: 400; color: white">
+                                    Roles &amp; Their briefs</h4>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+
+                                  <!-- Modal Content-->
+                                  <h3 style="text-transform: uppercase; font-size: 20px;font-weight: 400; color: white">
+                                    PR, Media Design:</h3>
+                                  <p style="text-align: justify; color: white;">As the PR, Media &amp; Design volunteer of
+                                    River Rangers, Kolkata, you will responsible for developing graphics and materials
+                                    for internal and external audiences of the River Rangers. Examples include web
+                                    graphics,
+                                    diagrams, exhibit material, posters, logos, icons, organization charts, workflow
+                                    diagrams, simple animations,
+                                    movie and video editing and other outreach materials.
+                                  </p>
+                                  <h3 style="text-transform: uppercase; font-size: 20px;font-weight: 400; color: white">
+                                    Awareness &amp; Education:</h3>
+                                  <p style="text-align: justify; color: white;">As the Public Awareness &amp; Academic
+                                    volunteer of River Rangers Kolkata, you will be responsible for
+                                    coordinating and organizing educational and public awareness sessions with various
+                                    institutional as well as
+                                    non-institutional organizations.
+                                  </p>
+                                  <h3 style="text-transform: uppercase; font-size: 20px;font-weight: 400; color: white">
+                                    Partnerships, Development, Stakeholders:</h3>
+                                  <p style="text-align: justify; color: white;">As the Partnerships, Development,
+                                    Stakeholders
+                                    volunteer of River Rangers Kolkata, you will be responsible for identifying
+                                    prospects and sequencing requests
+                                    to maximize opportunities. Establishing, maintaining and strengthening relations
+                                    with key funding partners,
+                                    members, the Board of Directors and other external stakeholders
+                                  </p>
+                                  <h3 style="text-transform: uppercase; font-size: 20px;font-weight: 400; color: white">
+                                    Field Action:</h3>
+                                  <p style="text-align: justify; color: white;">As the Field Action Volunteer of River
+                                    Rangers, Kolkata, you will responsible for conducting on field actions,
+                                    coordinating with other vertical and volunteers to create an impactful field action.
+                                  </p>
+                                  <h3 style="text-transform: uppercase; font-size: 20px;font-weight: 400; color: white">
+                                    Events:</h3>
+                                  <p style="text-align: justify; color: white;">As the Event management volunteer of the
+                                    River Rangers, Kolkata, you will responsible for developing,
+                                    planning, implementing, managing, and evaluating events that reach a wide and
+                                    diverse community.
+                                    Responsibilities will include plans, schedules, and implements and manages large
+                                    scale public citywide
+                                    events, such as, arranging clean-up drives, inviting the consulates.
+                                  </p>
+                                  <h3 style="text-transform: uppercase; font-size: 20px;font-weight: 400; color: white">
+                                    Policy Advocacy:</h3>
+                                  <p style="text-align: justify; color: white;">As the PR, Media &amp; Design volunteer of
+                                    River Rangers, Kolkata, you will responsible for developing graphics
+                                    and materials for internal and external audiences of the River Rangers. Examples
+                                    include web graphics,
+                                    diagrams, exhibit material, posters, logos, icons, organization charts, workflow
+                                    diagrams, simple animations,
+                                    movie and video editing and other outreach materials.
+                                  </p>
+                                  <h3 style="text-transform: uppercase; font-size: 20px;font-weight: 400; color: white">
+                                    Technology Solutions:</h3>
+                                  <p style="text-align: justify;; color: white">As the Technology Solution volunteer of
+                                    River Rangers, Kolkata, you will be working with a team of technical
+                                    problem solvers, helping to solve complex business issue, working on code and river
+                                    cleaning technology
+                                    innovations from strategy to execution.
+                                  </p>
+                                  <!-- Modal Content-->
+
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary btn-sm  orange accent-4 waves-effect waves-light" data-dismiss="modal">Close</button>
+
+                              </div>
+                            </div>
+                          </div>
+                      </form>
+{% endblock content%}
